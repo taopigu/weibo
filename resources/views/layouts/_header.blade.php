@@ -8,7 +8,20 @@
                         <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button">
                             {{ Auth::user()->name }}
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('users.show', Auth::user()) }}" title="">個人中心</a>
+                        <a href="#" class="dropdown-item" title="">編輯資料</a>
+                        <a class="dropdown-item" id="logout" href="#" title="">
+                                <form action="{{ route('logout') }}" method="POST" accept-charset="utf-8">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+                                    <button class="btn btn-block btn-danger" type="submit" name="button">退出</button>
+                                </form>
+                        </a>
+
+
+
+
+<!--                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('users.show', Auth::user()) }}" title="">個人中心</a>
                             <a href="#" class="dropdown-item" title="">編輯資料</a>
                             <div class="dropdown-divider"></div>
@@ -19,7 +32,7 @@
                                     <button class="btn btn-block btn-danger" type="submit" name="button">退出</button>
                                 </form>
                             </a>
-                        </div>
+                        </div> -->
                     </li>
                 @else
                 <li class="nav-item"><a class="nav-link" href="{{ route('help') }}" title="">帮助</a></li>
