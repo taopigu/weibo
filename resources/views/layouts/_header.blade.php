@@ -9,7 +9,7 @@
                             {{ Auth::user()->name }}
                         </a>
                         <a class="dropdown-item" href="{{ route('users.show', Auth::user()) }}" title="">個人中心</a>
-                        <a href="#" class="dropdown-item" title="">編輯資料</a>
+                        <a href="{{ route('users.edit', Auth::user()) }}" class="dropdown-item" title="">編輯資料</a>
                         <a class="dropdown-item" id="logout" href="#" title="">
                                 <form action="{{ route('logout') }}" method="POST" accept-charset="utf-8">
                                     {{ csrf_field() }}
@@ -36,7 +36,7 @@
                     </li>
                 @else
                 <li class="nav-item"><a class="nav-link" href="{{ route('help') }}" title="">帮助</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" title="">登陆</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('login') }}" title="">登陆</a></li>
                 @endif
             </ul>
         </div>
