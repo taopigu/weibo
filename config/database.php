@@ -1,8 +1,5 @@
 <?php
 
-$db_config = get_db_config();
-
-
 return [
 
     /*
@@ -58,21 +55,6 @@ return [
             'strict' => true,
             'engine' => null,
         ],
-
-        'pgsql' => [
-            'driver' => 'pgsql',
-            'host' => $db_config['host'],
-            'port' => env('DB_PORT', '5432'),
-            'database' => $db_config['database']
-            'username' => $db_config['username'],
-            'password' => $db_config['password'],
-            'charset' => 'utf8',
-            'prefix' => '',
-            'prefix_indexes' => true,
-            'schema' => 'public',
-            'sslmode' => 'prefer',
-        ],
-
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'host' => env('DB_HOST', 'localhost'),
